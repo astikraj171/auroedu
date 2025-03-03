@@ -39,9 +39,8 @@ The **backend** is built using **Node.js/Express** with **MongoDB Atlas** (via M
 **GitHub Repository:**  
 [https://github.com/astikraj171/auroedu](https://github.com/astikraj171/auroedu)
 
-**Deployed Links:**  
-Backend: [http://ec2-13-51-72-206.eu-north-1.compute.amazonaws.com:5000/](http://ec2-13-51-72-206.eu-north-1.compute.amazonaws.com:5000/)  
-Frontend: [http://auroedutask.s3-website.eu-north-1.amazonaws.com/](http://auroedutask.s3-website.eu-north-1.amazonaws.com/)
+**Links:**  
+Project Link: [http://auroedutask.s3-website.eu-north-1.amazonaws.com/](http://auroedutask.s3-website.eu-north-1.amazonaws.com/)
 
 ---
 
