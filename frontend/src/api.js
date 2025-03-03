@@ -1,12 +1,10 @@
 // src/api.js
 import axios from 'axios';
 
-// Create an Axios instance with a base URL
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api' // Adjust for your deployment
+  baseURL: 'http://ec2-13-51-72-206.eu-north-1.compute.amazonaws.com:5000/api'
 });
 
-// Optional: Attach token to every request if available
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {

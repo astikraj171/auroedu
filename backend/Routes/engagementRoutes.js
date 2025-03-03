@@ -1,13 +1,15 @@
+// routes/engagementRoutes.js
 const express = require('express');
 const router = express.Router();
 const engagementController = require('../controllers/engagementController');
-const { protect } = require('../middleware/authMiddleware.js');
+// Uncomment the line below if you want to protect routes with authentication middleware
+// const { protect } = require('../middleware/authMiddleware');
 
-// Engagement API routes
+// GET all engagements for a specific course
 router.get('/course/:courseId', engagementController.getEngagementsByCourse);
-router.post('/', protect, engagementController.createEngagement);
-router.get('/:id', engagementController.getEngagementById);
-router.put('/:id', protect, engagementController.updateEngagement);
-router.delete('/:id', protect, engagementController.deleteEngagement);
+
+// POST a new engagement (like or comment)
+// If you have authentication, add the protect middleware: router.post('/', protect, engagementController.createEngagement);
+router.post('/', engagementController.createEngagement);
 
 module.exports = router;

@@ -1,13 +1,12 @@
-// src/pages/CreateCourse.js
 import React, { useState } from 'react';
 import API from '../api';
 
 function CreateCourse() {
+  // Removed instructor from initial state
   const [formData, setFormData] = useState({
     title: '',
     description: '',
-    schedule: '',
-    instructor: ''
+    schedule: ''
   });
   const [message, setMessage] = useState('');
 
@@ -21,6 +20,7 @@ function CreateCourse() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Send only title, description, and schedule
       const { data } = await API.post('/courses', formData);
       setMessage(`Course created: ${data.title}`);
     } catch (error) {
@@ -53,13 +53,7 @@ function CreateCourse() {
           value={formData.schedule}
           onChange={handleChange}
         /><br/>
-        <label>Instructor (User ID): </label>
-        <input
-          name="instructor"
-          type="text"
-          value={formData.instructor}
-          onChange={handleChange}
-        /><br/>
+        {/* Removed Instructor Field */}
         <button type="submit">Create</button>
       </form>
       {message && <p>{message}</p>}

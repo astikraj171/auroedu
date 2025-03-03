@@ -1,5 +1,7 @@
+// server.js
 const express = require('express');
 const dotenv = require('dotenv');
+const cors = require('cors');
 const connectDB = require('./config/db');
 const courseRoutes = require('./Routes/courseRoutes.js');
 const userRoutes = require('./Routes/userRoutes.js');
@@ -13,8 +15,9 @@ const app = express();
 // Connect to MongoDB
 connectDB();
 
-// Middleware to parse JSON bodies
+// Middleware
 app.use(express.json());
+app.use(cors());
 
 // Define API routes
 app.use('/api/courses', courseRoutes);
